@@ -1,0 +1,286 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.main-container {
+  padding-top: 12em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #042861;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 1.5rem;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.7);
+}
+
+.user-list {
+  width: 70%;
+  padding: 0 10px;
+  box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.7);
+}
+.user-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: left;
+  border-bottom: 1px solid #949494;
+  padding: 5px 0px;
+  font-size: 0.8rem;
+  background-color: white;
+  margin-bottom: 5px;
+}
+.user-list-item .user-info-wrapper {
+  width: 100%;
+  display: flex;
+}
+.user-list-item .user-info-wrapper span {
+  width: 25%;
+  text-align: center;
+  padding: 5px 15px;
+  border-right: 1px solid #f2f2f2;
+}
+.user-list-item .user-info-wrapper span.name {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.user-list-item .user-item-btn-wrapper {
+  display: flex;
+}
+.user-list-item .user-item-btn-wrapper .delete-btn,
+.user-list-item .user-item-btn-wrapper .update-btn {
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+.user-list-item .user-item-btn-wrapper .update-btn {
+  background: url(../img/icons/edit.svg) no-repeat center center;
+}
+.user-list-item .user-item-btn-wrapper .delete-btn {
+  background: url(../img/icons/delete.svg) no-repeat center center;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding-top: 6em;
+  }
+  .main-container .user-list {
+    width: 100%;
+  }
+  .main-container .user-list .user-list-item .user-info-wrapper {
+    width: 80%;
+    flex-direction: column;
+  }
+  .main-container .user-list .user-list-item .user-info-wrapper span {
+    text-align: left;
+    width: unset;
+  }
+  .main-container .user-list .user-item-btn-wrapper {
+    width: 20%;
+    justify-content: space-around;
+  }
+  .main-container .user-list .user-item-btn-wrapper .delete-btn,
+.main-container .user-list .user-item-btn-wrapper .update-btn {
+    width: 30px;
+    height: 25px;
+  }
+}
+.search-bar {
+  width: 100%;
+  display: flex;
+  margin: 1rem 0 0.5rem;
+}
+.search-bar input {
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  border-bottom: 1px solid #949494;
+  padding: 5px 10px 3px;
+}
+.search-bar .search-btn {
+  width: calc(1rem + 6px);
+  border-bottom: 1px solid #949494;
+  background: white url("../img/icons/search.svg") no-repeat center center;
+}
+
+.filter-container {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.filter-container .filter-btn {
+  font-size: 0.8rem;
+  flex: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  padding: 6px 10px;
+  background-color: #f2f2f2;
+  color: #042861;
+}
+.filter-container .filter-btn:not(:last-of-type) {
+  border-right: 1px solid #949494;
+}
+.filter-container .filter-btn.active {
+  background-color: #042861;
+  color: white;
+}
+
+.add-user-page {
+  margin-top: 12em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.add-user-page form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.7);
+  padding: 2rem 1rem;
+  width: 25%;
+}
+.add-user-page form .mb-3 {
+  position: relative;
+  display: flex;
+  padding: 5px 0 16px;
+  width: 100%;
+  justify-content: space-between;
+}
+.add-user-page form .mb-3 .invalid-feedback {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-top: 5px;
+  font-size: 0.8rem;
+  color: tomato;
+  font-style: italic;
+}
+.add-user-page form .mb-3 .form-control {
+  width: 60%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.add-user-page form button {
+  padding: 5px 10px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  background-color: #042861;
+  font-weight: 600;
+  cursor: pointer;
+}
+.add-user-page a {
+  display: block;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .add-user-page {
+    margin-top: 8em;
+  }
+  .add-user-page form {
+    width: 95%;
+  }
+}
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.user-update-modal {
+  position: absolute;
+  width: 25%;
+  padding: 3rem 2rem 1rem;
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.7);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: white;
+  z-index: 2;
+}
+.user-update-modal form {
+  display: flex;
+  flex-direction: column;
+}
+.user-update-modal form button {
+  padding: 5px 10px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 5px;
+  color: white;
+  background-color: #042861;
+  font-weight: 600;
+  cursor: pointer;
+}
+.user-update-modal form .mb-3 {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.2rem;
+}
+.user-update-modal form .mb-3 input {
+  width: 70%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.user-update-modal form .mb-3 .invalid-feedback {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: tomato;
+}
+
+.add-user-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+  margin-top: 1rem;
+}
+.add-user-wrapper a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.add-user-wrapper a .add-usr-btn {
+  width: 100%;
+  height: 100%;
+  background: url("../img/icons/add.svg") no-repeat center center;
+}
+
+@media (max-width: 768px) {
+  .add-user-wrapper {
+    width: 95%;
+  }
+
+  .user-update-modal {
+    width: 80%;
+  }
+}/*# sourceMappingURL=styles.css.map */

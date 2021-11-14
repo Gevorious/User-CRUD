@@ -1,0 +1,71 @@
+.user-list {
+  width: 70%;
+  padding: 0 10px;
+  box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.7);
+  &-item {
+    @include centered-flex(row);
+    justify-content: left;
+    border-bottom: 1px solid $primary-gray;
+    padding: 5px 0px;
+    font-size: $font-small;
+    background-color: white;
+    margin-bottom: 5px;
+    .user-info-wrapper {
+      width: 100%;
+      display: flex;
+      span {
+        width: 25%;
+        text-align: center;
+        padding: 5px 15px;
+        border-right: 1px solid $secondary-gray;
+        &.name {
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+    }
+    .user-item-btn-wrapper {
+      display: flex;
+      .delete-btn,
+      .update-btn {
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+      }
+      .update-btn {
+        background: url(../img/icons/edit.svg) no-repeat center center;
+      }
+      .delete-btn {
+        background: url(../img/icons/delete.svg) no-repeat center center;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding-top: 6em;
+    .user-list {
+      width: 100%;
+      .user-list-item {
+        .user-info-wrapper {
+          width: 80%;
+          flex-direction: column;
+          span {
+            text-align: left;
+            width: unset;
+          }
+        }
+      }
+      .user-item-btn-wrapper {
+        width: 20%;
+        justify-content: space-around;
+        .delete-btn,
+        .update-btn {
+          width: 30px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}

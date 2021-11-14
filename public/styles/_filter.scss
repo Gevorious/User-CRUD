@@ -1,0 +1,21 @@
+.filter-container {
+  display: flex;
+  margin-bottom: 2rem;
+  .filter-btn {
+    font-size: $font-small;
+    flex: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
+    &:not(:last-of-type) {
+      border-right: 1px solid $primary-gray;
+    }
+    padding: 6px 10px;
+    background-color: $secondary-gray;
+    color: $primary-blue;
+    &.active {
+      background-color: $primary-blue;
+      color: white;
+    }
+  }
+}
