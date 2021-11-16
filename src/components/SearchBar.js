@@ -1,10 +1,10 @@
 import React from "react";
 
-const SearchBar = ({ searchHandler, onChange }) => {
+const SearchBar = ({ onChange }) => {
   return (
     <div className="search-bar">
       <input type="text" onChange={onChange} autoFocus />
-      <span onClick={searchHandler} className="search-btn"></span>
+      <span className="search-btn"></span>
     </div>
   );
 };
