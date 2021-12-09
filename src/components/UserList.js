@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers, setFilter } from "../redux/userSlice";
+import { fetchUsers } from "../redux/userSlice";
 import { transformData } from "../helpers/transformData";
 import Filter from "./Filter/Filter";
 import SearchBar from "./SearchBar";
